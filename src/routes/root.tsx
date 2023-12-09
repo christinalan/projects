@@ -1,8 +1,9 @@
 import {useState, createRef, useRef } from 'react'
 import './root.css';
-import { Outlet, Link, useNavigate, useLocation, useOutlet} from "react-router-dom";
-import { SwitchTransition, CSSTransition, TransitionGroup } from "react-transition-group";
-import { Power3, gsap } from "gsap";
+// import {Outlet } from 'react-router-dom'
+import { Link, useNavigate, useLocation, useOutlet} from "react-router-dom";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
+import { gsap } from "gsap";
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -13,7 +14,6 @@ const Root = () => {
   
   const locationLink = useLocation();
   const currentOutlet = useOutlet();
-  const nodeRef = useRef(null);
 
   const nodeRefs = useRef(
     Object.fromEntries(
@@ -89,9 +89,11 @@ const Root = () => {
 
             <div className="project-content py-3 px-5 mt-5 sm:mt-8">
             <div className="link-content">
+                
               <SwitchTransition>
                 <CSSTransition
                     key={locationLink.pathname}
+                    //@ts-ignore
                     nodeRef={nodeRefs.current[locationLink.pathname]}
                     timeout={300}
                     classNames="fade"
@@ -99,7 +101,7 @@ const Root = () => {
                     onEntering={onEnter}
                     unmountOnExit
                     >
-                      <div ref={nodeRefs.current[locationLink.pathname]}>{currentOutlet}</div>
+                      <div>{currentOutlet}</div>
                   {/* <Outlet /> */}
                 </CSSTransition>
               </SwitchTransition>
