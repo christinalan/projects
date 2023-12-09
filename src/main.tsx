@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Root from './routes/root'
+import Root from './routes/root.tsx'
 import './index.css'
 import {
   createBrowserRouter,
   RouterProvider, 
 } from "react-router-dom"
-import MapLibs from './components/MapLibs.tsx'
+import MapLibs from './components/Maplibs.tsx'
 import Birbs from './components/Birbs.tsx'
 import ErrorPage from './error-page.tsx'
 
