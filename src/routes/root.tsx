@@ -47,7 +47,7 @@ const Root = () => {
 
   const onExit = () => {
     gsap.to(
-      ".project",
+      ".navLink",
       {
         duration: 2,
         y: -15,
