@@ -1,1 +1,0 @@
-Portfolio of recent projects. Built on React + Vite, Typescript, and GSAP
